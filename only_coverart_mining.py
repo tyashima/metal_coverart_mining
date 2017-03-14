@@ -187,6 +187,10 @@ def download(imgurl, bandname, title, num_cand, imgurls, store_dir):
 def main(params):
 	store_dir = params["imgdir"]
 
+	if not os.path.isdir(store_dir + "imgs"):
+		os.mkdir(store_dir + "imgs")
+
+
 	target = ["Full-length"]
 	if params['Single'] is True:
 		target.append("Single")
